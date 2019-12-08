@@ -9,20 +9,53 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby_enum'
+gem "ruby_enum", github: "mlogix/ruby_enum", require: "ruby_enum"
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install ruby_enum
-
 ## Usage
 
-TODO: Write usage instructions here
+```
+class TaskActionTypeEnum < Enum
+  SIMPLE_ACTION     = "simple_action".freeze
+  SEND_EMAIL        = "send_email".freeze
+  PHONE_CALL        = "phone_call".freeze
+  MAKE_APPOINTMENT  = "make_appointment".freeze
+  FILL_FORM         = "fill_form".freeze
+end
+```
+
+```
+TaskActionTypeEnum.entries
+=> [:PHONE_CALL, :MAKE_APPOINTMENT, :FILL_FORM, :SIMPLE_ACTION, :SEND_EMAIL]
+```
+
+```
+TaskActionTypeEnum.values
+=> ["phone_call", "make_appointment", "fill_form", "simple_action", "send_email"]
+```
+
+```
+TaskActionTypeEnum.to_h
+=> {:PHONE_CALL=>"phone_call",
+ :MAKE_APPOINTMENT=>"make_appointment",
+ :FILL_FORM=>"fill_form",
+ :SIMPLE_ACTION=>"simple_action",
+ :SEND_EMAIL=>"send_email"}
+```
+
+```
+TaskActionTypeEnum[:SIMPLE_ACTION]
+=> "simple_action"
+```
+
+```
+TaskActionTypeEnum.get_const("simple_action")
+=> :SIMPLE_ACTION
+```
 
 ## Development
 
