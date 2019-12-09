@@ -30,5 +30,9 @@ class Enum
     def get_const(val)
       entries.detect { |v| self.value_of(v) == val }
     end
+
+    def include?(val)
+      values.include?(val)
+    end
   end
 end
