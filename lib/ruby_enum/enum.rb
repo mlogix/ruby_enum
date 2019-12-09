@@ -31,6 +31,10 @@ class Enum
       entries.detect { |v| self.value_of(v) == val }
     end
 
+    def entries
+      super.entries.map(&:to_s)
+    end
+
     def include?(val)
       values.include?(val)
     end
