@@ -40,11 +40,11 @@ TaskActionTypeEnum.values
 
 ```
 TaskActionTypeEnum.to_h
-=> {:PHONE_CALL=>"phone_call",
- :MAKE_APPOINTMENT=>"make_appointment",
- :FILL_FORM=>"fill_form",
- :SIMPLE_ACTION=>"simple_action",
- :SEND_EMAIL=>"send_email"}
+=> {"PHONE_CALL"=>"phone_call",
+ "MAKE_APPOINTMENT"=>"make_appointment",
+ "FILL_FORM"=>"fill_form",
+ "SIMPLE_ACTION"=>"simple_action",
+ "SEND_EMAIL"=>"send_email"}
 ```
 
 ```
@@ -54,7 +54,7 @@ TaskActionTypeEnum[:SIMPLE_ACTION]
 
 ```
 TaskActionTypeEnum.get_const("simple_action")
-=> :SIMPLE_ACTION
+=> "SIMPLE_ACTION"
 ```
 
 ## Development
