@@ -19,8 +19,13 @@ class Enum
     end
     alias [] value_of
 
-    def to_h
-      entries.map { |v| [v, self.value_of(v)] }.to_h
+    def to_h(downcase: false, symbolize: false)
+      entries.map do |v|
+        key = downcase ? v.downcase : v
+        key = key.to_sym if symbolize
+
+        [ key, self.value_of(v)]
+      end.to_h
     end
 
     def values
