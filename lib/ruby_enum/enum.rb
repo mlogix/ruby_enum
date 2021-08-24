@@ -28,8 +28,11 @@ class Enum
       end.to_h
     end
 
-    def values(downcase: false)
-      entries.map { |v| downcase ? self.value_of(v).downcase : self.value_of(v) }
+    def values(downcase: false, stringify: false)
+      entries.map do |v|
+        val = downcase ? self.value_of(v).downcase : self.value_of(v)
+        stringify ? val.to_s : val
+      end
     end
 
     def get_const(val)
