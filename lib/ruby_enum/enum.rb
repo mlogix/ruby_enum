@@ -46,5 +46,11 @@ class Enum
     def include?(val)
       values.include?(val)
     end
+
+    def options(*args)
+      args.each do |name|
+        self.const_set name, [self.name, name].join("::").underscore
+      end
+    end
   end
 end

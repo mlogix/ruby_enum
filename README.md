@@ -8,7 +8,7 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "ruby_enum", github: "mlogix/ruby_enum", require: "ruby_enum"
+gem "ruby_enum", "0.1.7", github: "mlogix/ruby_enum", require: "ruby_enum"
 ```
 
 And then execute:
@@ -54,6 +54,17 @@ TaskActionTypeEnum[:SIMPLE_ACTION]
 ```
 TaskActionTypeEnum.get_const("simple_action")
 => "SIMPLE_ACTION"
+```
+
+```
+class TaskActionTypeEnum < Enum
+  options :SIMPLE_ACTION, :SEND_EMAIL, :PHONE_CALL
+end
+
+...
+
+TaskActionTypeEnum::SIMPLE_ACTION
+=> "task_action_type_enum/simple_action"
 ```
 
 ## Development
